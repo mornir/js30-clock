@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>JS + CSS Clock</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="clock">
+
+      <div class="hourHand hand"></div>
+      <div class="minuteHand hand"></div>
+      <div class="secondHand hand"></div>
+    </div>
+  </div>
+  <style>
+    html {
+      box-sizing: border-box;
+    }
+
+    *,
+    *:before,
+    *:after {
+      box-sizing: inherit;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      background-image: url('fire.jpg');
+      background-size: cover;
+    }
+
+    .clock {
+      background-color: rgba(0, 0, 0, 0.7);
+      width: 400px;
+      height: 400px;
+      border-radius: 50%;
+      border: 20px solid #FF4136;
+      position: relative;
+
+    }
+
+    .hand {
+      background-color: white;
+      position: absolute;
+      top: calc(50% - 8px);
+      height: 8px;
+      transform-origin: right center;
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .hourHand {
+      left: calc(50% - 70px);
+      width: 70px;
+    }
+
+    .minuteHand {
+      left: calc(50% - 100px);
+      width: 100px;
+    }
+
+    .secondHand {
+      left: calc(50% - 150px);
+      width: 150px;
+    }
+  </style>
+  <script src="./script.js"></script>
+</body>
+
+</html>
